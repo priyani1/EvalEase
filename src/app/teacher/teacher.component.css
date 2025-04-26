@@ -1,0 +1,29 @@
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+h2, h3 {
+  color: #333;
+}
+
+form input, button {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkblue;
+}

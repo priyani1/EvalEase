@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h2 class="text-success">🎓 Student Dashboard</h2>
+
+  <div class="card p-4 mt-3 shadow">
+    <h4>📌 Available Assessments</h4>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let assessment of assessments">
+        <span><strong>{{ assessment.title }}</strong> - {{ assessment.description }}</span>
+        <button class="btn btn-primary btn-sm">Submit</button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card mt-4 p-4 shadow">
+    <h4>📤 Submit Assignment</h4>
+    <input type="file" (change)="onFileSelected($event)" class="form-control mt-2">
+    <button class="btn btn-success mt-2" (click)="uploadSubmission()">Upload</button>
+  </div>
+
+  <div class="card mt-4 p-4 shadow">
+    <h4>✅ Grades</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let grade of grades">
+        <strong>{{ grade.assessmentTitle }}:</strong> {{ grade.marks }} / 100
+      </li>
+    </ul>
+  </div>
+</div>

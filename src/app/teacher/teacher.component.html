@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <h2 class="text-primary">📚 Teacher Dashboard</h2>
+
+  <div class="card p-4 mt-3 shadow">
+    <h4>Create Assessment</h4>
+    <div class="row">
+      <div class="col-md-5">
+        <input type="text" class="form-control" [(ngModel)]="newAssessment.title" placeholder="Enter title">
+      </div>
+      <div class="col-md-5">
+        <input type="text" class="form-control" [(ngModel)]="newAssessment.description" placeholder="Enter description">
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-primary w-100" (click)="addAssessment()">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-4 p-4 shadow">
+    <h4>📄 Assessments</h4>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let assessment of assessments">
+        <span><strong>{{ assessment.title }}</strong> - {{ assessment.description }}</span>
+        <button class="btn btn-danger btn-sm" (click)="deleteAssessment(assessment.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card mt-4 p-4 shadow">
+    <h4>📩 Student Submissions</h4>
+    <button class="btn btn-info" (click)="loadSubmissions()">Load Submissions</button>
+  </div>
+</div>
